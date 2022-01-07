@@ -1,0 +1,49 @@
+div.standard {
+    text-align: center;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-weight: bold;
+    margin: 10px;
+}
+
+.head {
+    background-color: rgb(240, 77, 77);
+    color: white;
+    text-align: center;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-weight: bold;
+    margin: 10px;
+}
+
+html,
+body {
+    width: 100%;
+}
+
+.navbar-nav {
+    align-items: center;
+    align-self: center;
+}
+
+table {
+    margin: 0 auto;
+    table-layout: fixed;
+}
+
+table {
+    counter-reset: tableCount;
+}
+
+.counterCell:before {
+    content: counter(tableCount);
+    counter-increment: tableCount;
+}
+
+p {
+    padding: 35px;
+}
+
+.forms {
+    display: flex;
+    justify-content: center;
+    margin: 20px;
+}

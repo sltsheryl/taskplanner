@@ -1,0 +1,35 @@
+{% extends "layout.html" %} {% block body %}
+
+
+<form action="/login" method="post">
+
+    <div style="text-align:center;">
+        <div class="standard">
+            Welcome :)
+        </div>
+        <div id="image" style="margin: 10px;">
+            <img id="time" src="{{ url_for('static', filename='time.jpeg') }}" height="350" width="300" />
+
+        </div>
+        <div class="form-group">
+            <input autocomplete="off" autofocus name="name" placeholder="Username" type="text">
+        </div>
+        <div class="form-group">
+            <input autocomplete="off" autofocus name="password" placeholder="Password" type="text">
+        </div>
+
+        <button type="submit" class="btn btn-primary" value="Log In">Login</button>
+        <div style="margin: 10px;">
+            <a href="/reset"> Forgot Password </a>
+        </div>
+        <div>
+            <a href="/register"> Register </a>
+        </div>
+
+    </div>
+</form>
+
+
+
+
+{% endblock %}

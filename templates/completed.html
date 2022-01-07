@@ -1,0 +1,40 @@
+{% extends "layout.html" %} {% block body %} {% if session.name %}
+
+<div class="alert alert-success" role="alert">
+    <h4 class="alert-heading">Well done!</h4>
+    <p>Aww yeah, you successfully completed all this. Now let's keep the good vibes going and keep it up!</p>
+    <hr>
+    <p class="mb-0">Whenever you need to, take short breaks to prevent getting burnt out.</p>
+</div>
+
+<table class="table table-hover">
+    <thead class="thead-light">
+        <tr>
+            <th scope="col">No.</th>
+            <th scope="col">Tag</th>
+            <th scope="col">Task</th>
+            <th scope="col">Time</th>
+
+        </tr>
+    </thead>
+    <tbody>
+        {% for x in completed %}
+        <tr>
+            <td class="counterCell"></td>
+            <td> {{ x.tag }}</td>
+            <td>{{ x.task }}</td>
+            <td>
+                {{ x.created_at }}
+
+            </td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+
+<form action="/complete" method="post">
+    <input type="submit" value="Clear Items" class="btn btn-outline-danger">
+</form>
+
+
+{% else %} You are not logged in. <a href="/login">Log in</a>. {% endif %} {% endblock %}

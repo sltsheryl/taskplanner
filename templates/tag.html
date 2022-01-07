@@ -1,0 +1,23 @@
+{% extends "layout.html" %} {% block body %} {% if session.name %}
+<div class="standard">
+    Tag Inspector
+</div>
+<table class="table" style="text-align: center;">
+    <thead class="thead-dark">
+        <tr>
+            <th scope="col">{{tag}}</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for x in tags %}
+        <tr>
+            <td>{{x.task}}</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+
+<div style="text-align: center;">
+    <a href="/">Back to Home</a>
+</div>
+{% else %} You are not logged in. <a href="/login">Log in</a> {% endif %} {% endblock %}

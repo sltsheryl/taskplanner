@@ -1,0 +1,24 @@
+{% extends "layout.html" %} {% block body %}
+<div class="standard">
+    Reset Password
+</div>
+<form action="/reset" method="post">
+    <div style="text-align:center;">
+        <div class="form-group">
+
+            <input autocomplete="off" autofocus name="email" placeholder="Email" type="text">
+        </div>
+        <div class="form-group">
+
+            <input autocomplete="off" autofocus name="password" placeholder="Password" type="text">
+        </div>
+
+        <button type="submit" class="btn btn-primary" value="reset">Reset Password</button>
+
+    </div>
+</form>
+
+
+
+
+{% endblock %}

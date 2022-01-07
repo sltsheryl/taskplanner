@@ -1,0 +1,23 @@
+{% extends "layout.html" %} {% block body %} {% if session.name %}
+<div class="standard">
+    Profile
+</div>
+<div class="container mt-4 mb-4 p-3 d-flex justify-content-center">
+
+    <div class="card p-4">
+        <div class=" image d-flex flex-column justify-content-center align-items-center">
+            <button class="btn btn-secondary"> 
+                <img src="{{ url_for('static', filename='nyan.jpg') }}" height="100" width="100" />
+            </button>
+            <span class="name mt-3" style="font-weight: bold;">User: {{name}}</span>
+            <span class="idd">Email: {{email}}</span>
+            <div class="d-flex flex-row justify-content-center align-items-center gap-2"> <span class="idd1">&#9989; Verified Productive Bee</span>
+                <span><i class="fa fa-copy"></i></span> </div>
+            <a href="/reset" class=" d-flex mt-2"> <button class="btn1 btn-dark">Reset Password</button> </a>
+        </div>
+    </div>
+</div>
+
+
+
+{% else %} You are not logged in. <a href="/login">Log in</a> {% endif %} {% endblock %}

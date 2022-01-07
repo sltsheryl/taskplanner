@@ -1,0 +1,62 @@
+{% extends "layout.html" %} {% block body %} {% if session.name %}
+<div class="head">
+    <div>
+        {{ date_display }}
+    </div>
+    <div>
+        {{ day }} &#128516;
+    </div>
+
+</div>
+<div class="standard">
+    Add Tasks
+</div>
+<div class="forms">
+    <form action="/addtask" method="post">
+        <input name="task" placeholder="Task" type="text">
+        <input name="tag" placeholder="Tag" type="text">
+        <input type="submit" class="btn btn-success" value="Add">
+
+    </form>
+</div>
+
+
+<table class="table table-hover">
+    <thead class="thead-light">
+        <tr>
+            <th scope="col">No.</th>
+            <th scope="col">Tag</th>
+            <th scope="col">Task</th>
+            <th scope="col">Status</th>
+
+        </tr>
+    </thead>
+    <tbody>
+        {% for x in tasks %}
+        <tr>
+            <td class="counterCell"></td>
+            <form action="/tag" method="post">
+                <input name="tag" type="hidden" value="{{ x.tag }}">
+                <td> <button type="submit" class="btn btn-outline-primary">{{ x.tag }}</button></td>
+            </form>
+            <td>{{ x.task }}</td>
+            <td>
+                <form action="/completed" method="post">
+                    <input name="id" type="hidden" value="{{ x.id }}">
+                    <input type="submit" value="Completed" class="btn btn-outline-danger">
+                </form>
+            </td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+
+<div class="standard">
+    You are logged in as {{ session.name }}.
+    <div>
+        <a href="/logout">Log out</a>
+    </div>
+</div>
+
+
+{% else %} You are not logged in. <a href="/login">Log in</a> {% endif %} {% endblock %}

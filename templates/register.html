@@ -1,0 +1,23 @@
+{% extends "layout.html" %} {% block body %}
+
+<form action="/register" method="post">
+    <div style="text-align:center;">
+        <div class="form-group">
+            <label for="name">Username</label>
+            <input autocomplete="off" autofocus name="name" placeholder="Username" type="text">
+        </div>
+        <div class="form-group">
+            <label for="email">Email</label>
+            <input autocomplete="off" autofocus name="email" placeholder="Email" type="text">
+        </div>
+        <div class="form-group">
+            <label for="password">Password</label>
+            <input autocomplete="off" autofocus name="password" placeholder="Password" type="text">
+        </div>
+
+        <button type="submit" class="btn btn-primary" value="reset">Register</button>
+
+    </div>
+</form>
+
+{% endblock %}
