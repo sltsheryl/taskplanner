@@ -18,16 +18,17 @@ Tools used: Bootstrap <br>
 
 
 
-<p float = "left">
+<strong> <p align = "center"> Login and Home page </p> </strong>
+<p float = "left" align = "center">
+<img height="280" alt="homepage" src="https://user-images.githubusercontent.com/96589109/148578461-b473448c-020c-4d6f-9548-985cfa2f9078.png">
+  &nbsp
 
-<img height="300" alt="homepage" src="https://user-images.githubusercontent.com/96589109/148578461-b473448c-020c-4d6f-9548-985cfa2f9078.png">
-
-<img height="300" alt="app page" src="https://user-images.githubusercontent.com/96589109/167164702-73649360-61de-418c-97ed-bf9471f55524.png"> 
+<img height="280" alt="app page" src="https://user-images.githubusercontent.com/96589109/167164702-73649360-61de-418c-97ed-bf9471f55524.png"> 
   
 
 </p>
 
 <p align="middle">
 <img height="300" alt="app page" src="https://user-images.githubusercontent.com/96589109/167164731-df331580-1934-4388-a94c-cefe1eb53a3e.png"> <br>
-Users can configure their profiles
+  <strong> Users can configure their profiles </strong>
 </p>
