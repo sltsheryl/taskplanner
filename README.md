@@ -2,16 +2,20 @@
 A task management/ to-do app made using Flask, Python and SQLite3 database. <br>
 Incorporates traditional CRUD functionalities. <br>
 
+## To Test
+1. ```git clone``` project locally. 
+2. ```flask run``` in the project root folder.
+## About
 Users are able to 
 - Create tasks <br>
 - Read the table of tasks in a table (in index) <br>
 - Update the status of the task (completed/ pending) <br>
 - Delete completed tasks <br>
 
-
 Each user has to be authenticated with an email and password. <br>
 
-Framework: Python Flask <br>
+## Framework
+Main: Python Flask <br>
 (Jinja templating, HTML, CSS) <br>
 Database: SQLite3 <br>
 Tools used: Bootstrap <br>
