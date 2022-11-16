@@ -23,7 +23,10 @@ db = get_db_connection()
 
 @app.route("/")
 def index():
-    if not session.get("name"):
+    name = session.get("name")
+    person = db.execute(
+            "SELECT name FROM users WHERE name = ?", [name]).fetchall()
+    if len(person) != 1:
         return redirect("/login")
     today = date.today()
     date_display = today.strftime("%b-%d-%Y")
@@ -63,6 +66,11 @@ def logout():
 
 @app.route("/complete", methods=["GET", "POST"])
 def complete():
+    name = session.get("name")
+    person = db.execute(
+            "SELECT name FROM users WHERE name = ?", [name]).fetchall()
+    if len(person) != 1:
+        return redirect("/login")
     if request.method == "POST":
         name = session.get("name")
         db.execute("DELETE FROM completed WHERE name = ?", [name])
@@ -87,8 +95,12 @@ def tag():
 @app.route("/profile")
 def profile():
     name = session.get("name")
+    person = db.execute(
+            "SELECT name FROM users WHERE name = ?", [name]).fetchall()
+    if len(person) != 1:
+        return redirect("/login")
     email = db.execute("SELECT email FROM users WHERE name = ?", [name]).fetchall()[
-        0]["email"]
+    0]["email"]
     return render_template("profile.html", name=name, email=email)
 
 
