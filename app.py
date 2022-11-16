@@ -129,7 +129,7 @@ def reset():
     if request.method == "POST":
         email = request.form.get("email")
         emails = db.execute(
-            "SELECT * FROM users WHERE email = ?", (email)).fetchall()
+            "SELECT * FROM users WHERE email = ?", (email,)).fetchall()
 
         password = request.form.get("password")
 
